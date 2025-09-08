@@ -7,13 +7,25 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
+    [SerializeField] private InputReader _inputReader;
     [SerializeField] private float _increasedValue = 1.0f;
     [SerializeField] private float _timeDelay = 0.5f;
-    [SerializeField] public UnityEvent CounterIncreased;
+
+    public event UnityAction CounterIncreased;
+
+    private Coroutine _coroutine;
 
     public float CurrentCounter { get; private set; } = 0;
 
-    private Coroutine _coroutine;
+    private void OnEnable()
+    {
+        _inputReader.KeyClicked += StartCounter;
+    }
+
+    private void OnDisable()
+    {
+        _inputReader.KeyClicked -= StartCounter;
+    }
 
     public void StartCounter()
     {

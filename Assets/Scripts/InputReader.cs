@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputReader : MonoBehaviour
 {
-    [SerializeField] private Counter _counter;
+    public event UnityAction KeyClicked;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            _counter.StartCounter();
+            KeyClicked?.Invoke();
         }
     }
 }

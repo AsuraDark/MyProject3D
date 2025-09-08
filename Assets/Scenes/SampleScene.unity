@@ -526,23 +526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca1f22ce3293aa4ea533f96d3129f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReader: {fileID: 1515040263}
   _increasedValue: 1
   _timeDelay: 0.5
-  CounterIncreased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1515040264}
-        m_TargetAssemblyTypeName: CounterView, Assembly-CSharp
-        m_MethodName: Display
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1515040263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bef34225c81c84e93e7dc34782f232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 1515040262}
 --- !u!114 &1515040264
 MonoBehaviour:
   m_ObjectHideFlags: 0
