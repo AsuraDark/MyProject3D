@@ -11,9 +11,9 @@ public class Counter : MonoBehaviour
     [SerializeField] private float _increasedValue = 1.0f;
     [SerializeField] private float _timeDelay = 0.5f;
 
-    public event UnityAction CounterIncreased;
-
     private Coroutine _coroutine;
+
+    public event UnityAction CounterIncreased;
 
     public float CurrentCounter { get; private set; } = 0;
 

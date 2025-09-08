@@ -5,11 +5,13 @@ using UnityEngine.Events;
 
 public class InputReader : MonoBehaviour
 {
+    private const KeyCode _leftButtonMouse = KeyCode.Mouse0;
+
     public event UnityAction KeyClicked;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(_leftButtonMouse))
         {
             KeyClicked?.Invoke();
         }
