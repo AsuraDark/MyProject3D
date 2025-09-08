@@ -2,51 +2,46 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private float _increasedValue;
-    [SerializeField] private Button _button;
-    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private float _increasedValue = 1.0f;
+    [SerializeField] private float _timeDelay = 0.5f;
+    [SerializeField] public UnityEvent CounterIncreased;
+
+    public float CurrentCounter { get; private set; } = 0;
 
     private Coroutine _coroutine;
 
-    private bool _isButtonClicked = false;
-
-    private void OnEnable()
+    public void StartCounter()
     {
-        _button.onClick.AddListener(OnButtonClicked);
-    }
-
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(OnButtonClicked);
-    }
-
-    private void OnButtonClicked()
-    {
-        _isButtonClicked = !_isButtonClicked;
-
-        if (_isButtonClicked )
-        {
-            _coroutine = StartCoroutine(IncreaseTimer());
-        }
-        else
+        if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
+            _coroutine = null;
+            return;
         }
+
+        _coroutine = StartCoroutine(IncreaseTimer());
     }
 
     private IEnumerator IncreaseTimer()
     {
         float timer = 0;
 
-        while(true)
+        while(enabled)
         {
-            timer = Convert.ToSingle(_timerText.text);
-            timer += _increasedValue;
-            _timerText.text = timer.ToString("");
+            timer += Time.deltaTime;
+
+            if(timer >= _timeDelay)
+            {
+                timer = 0;
+                CurrentCounter += _increasedValue;
+                CounterIncreased?.Invoke();
+            }
+
             yield return null;
         }
     }
