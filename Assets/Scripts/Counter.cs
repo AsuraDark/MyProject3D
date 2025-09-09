@@ -9,21 +9,21 @@ public class Counter : MonoBehaviour
     [SerializeField] private float _timeDelay = 0.5f;
 
     private Coroutine _coroutine;
-    private float CurrentCounter = 0;
+    private float _currentValue = 0;
 
-    public event Action<float> CounterIncreased;
+    public event Action<float> ValueIncreased;
 
     private void OnEnable()
     {
-        _inputReader.KeyClicked += StartCounter;
+        _inputReader.KeyClicked += StartWork;
     }
 
     private void OnDisable()
     {
-        _inputReader.KeyClicked -= StartCounter;
+        _inputReader.KeyClicked -= StartWork;
     }
 
-    public void StartCounter()
+    public void StartWork()
     {
         if (_coroutine != null)
         {
@@ -37,12 +37,14 @@ public class Counter : MonoBehaviour
 
     private IEnumerator IncreaseTimer()
     {
+        WaitForSeconds waitTime = new(_timeDelay);
+
         while (enabled)
         {
-            CurrentCounter += _increasedValue;
-            CounterIncreased?.Invoke(CurrentCounter);
+            _currentValue += _increasedValue;
+            ValueIncreased?.Invoke(_currentValue);
 
-            yield return new WaitForSeconds(_timeDelay);
+            yield return waitTime;
         }
     }
 }

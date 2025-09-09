@@ -8,16 +8,16 @@ public class CounterView : MonoBehaviour
 
     private void OnEnable()
     {
-        _counter.CounterIncreased += Display;
+        _counter.ValueIncreased += Display;
     }
 
     private void OnDisable()
     {
-        _counter.CounterIncreased -= Display;
+        _counter.ValueIncreased -= Display;
     }
 
-    public void Display(float counter)
+    public void Display(float value)
     {
-        _timerText.text = counter.ToString();
+        _timerText.text = value.ToString();
     }
 }
