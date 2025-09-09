@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
@@ -12,10 +9,9 @@ public class Counter : MonoBehaviour
     [SerializeField] private float _timeDelay = 0.5f;
 
     private Coroutine _coroutine;
+    private float CurrentCounter = 0;
 
-    public event UnityAction CounterIncreased;
-
-    public float CurrentCounter { get; private set; } = 0;
+    public event Action<float> CounterIncreased;
 
     private void OnEnable()
     {
@@ -41,20 +37,12 @@ public class Counter : MonoBehaviour
 
     private IEnumerator IncreaseTimer()
     {
-        float timer = 0;
-
-        while(enabled)
+        while (enabled)
         {
-            timer += Time.deltaTime;
+            CurrentCounter += _increasedValue;
+            CounterIncreased?.Invoke(CurrentCounter);
 
-            if(timer >= _timeDelay)
-            {
-                timer = 0;
-                CurrentCounter += _increasedValue;
-                CounterIncreased?.Invoke();
-            }
-
-            yield return null;
+            yield return new WaitForSeconds(_timeDelay);
         }
     }
 }

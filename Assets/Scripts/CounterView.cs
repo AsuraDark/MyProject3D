@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -18,8 +16,8 @@ public class CounterView : MonoBehaviour
         _counter.CounterIncreased -= Display;
     }
 
-    public void Display()
+    public void Display(float counter)
     {
-        _timerText.text = _counter.CurrentCounter.ToString();
+        _timerText.text = counter.ToString();
     }
 }
