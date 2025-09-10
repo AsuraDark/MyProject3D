@@ -1,17 +1,17 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class InputReader : MonoBehaviour
 {
-    private const KeyCode _input = KeyCode.Mouse0;
+    private KeyCode _input = KeyCode.Mouse0;
 
-    public event UnityAction KeyClicked;
+    public event Action MouseClicked;
 
     private void Update()
     {
-        if (Input.GetKeyDown(_input))
+        if (Input.GetKeyUp(_input))
         {
-            KeyClicked?.Invoke();
+            MouseClicked?.Invoke();
         }
     }
 }
