@@ -9,9 +9,7 @@ public class InputReader : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(_input))
-        {
+        if (Input.GetKeyDown(_input))
             MouseClicked?.Invoke();
-        }
     }
 }
