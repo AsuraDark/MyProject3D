@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            Cube newCube = Instantiate(_prefab, spawnPos, Quaternion.identity).GetComponent<Cube>();
+            Cube newCube = Instantiate(_prefab, spawnPos, Quaternion.identity);
             newCube.Init(startCube.CurrentChanceSplit, startCube.transform.localScale, _colorChanger.RandomColor);
             cubes.Add(newCube);
         }

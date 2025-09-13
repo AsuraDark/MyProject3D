@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee01b50cb186734689f8856c761b3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   _currentChanceSplit: 100
   _chanceReductionMultiplier: 2
   _scaleReductionMultiplier: 2
