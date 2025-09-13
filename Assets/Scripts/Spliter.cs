@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Spawner))]
+[RequireComponent(typeof(Exploder))]
 public class Spliter : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Exploder _exploder;
+    [SerializeField] private RayCaster _rayCaster;
 
     private float _minChanceSplit = 0f;
     private float _maxChanceSplit = 100f;
@@ -14,9 +17,20 @@ public class Spliter : MonoBehaviour
     {
         _spawner = GetComponent<Spawner>();
         _exploder = GetComponent<Exploder>();
+        _rayCaster = Camera.main.GetComponent<RayCaster>();
     }
 
-    public bool IsSplitFailed(Cube cube)
+    private void OnEnable()
+    {
+        _rayCaster.RaycastHitted += SplitCube;
+    }
+
+    private void OnDisable()
+    {
+        _rayCaster.RaycastHitted -= SplitCube;
+    }
+
+    private bool IsSplitFailed(Cube cube)
     {
         float chance = Random.Range(_minChanceSplit, _maxChanceSplit);
         return chance > cube.CurrentChanceSplit;

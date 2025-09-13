@@ -64,7 +64,6 @@
     <Compile Include="Assets\Scripts\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\Spliter.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
-    <Compile Include="Assets\Scripts\SplitChecker.cs" />
     <Compile Include="Assets\Scripts\Exploder.cs" />
   </ItemGroup>
   <ItemGroup>

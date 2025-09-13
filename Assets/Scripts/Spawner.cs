@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ColorChanger))]
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Cube _prefab;
@@ -11,7 +12,6 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        _prefab = GetComponent<Cube>();
         _colorChanger = GetComponent<ColorChanger>();
     }
 
