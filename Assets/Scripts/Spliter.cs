@@ -26,12 +26,13 @@ public class Spliter : MonoBehaviour
     {
         if (IsSplitFailed(cube))
         {
+            _exploder.Explosion(cube);
             Destroy(cube.gameObject);
             return;
         }
 
         List<Rigidbody> spawnedRigidbodies = _spawner.SpawnCubes(cube);
-        _exploder.Explosion(spawnedRigidbodies, cube.transform.position);
+        _exploder.Explosion(spawnedRigidbodies, cube);
         Destroy(cube.gameObject);
     }
 }
