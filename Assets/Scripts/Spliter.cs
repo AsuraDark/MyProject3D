@@ -45,8 +45,8 @@ public class Spliter : MonoBehaviour
             return;
         }
 
-        List<Rigidbody> spawnedRigidbodies = _spawner.SpawnCubes(cube);
-        _exploder.Explosion(spawnedRigidbodies, cube);
+        List<Cube> spawnedCubes = _spawner.SpawnCubes(cube);
+        _exploder.Explosion(spawnedCubes, cube);
         Destroy(cube.gameObject);
     }
 }

@@ -15,9 +15,9 @@ public class Spawner : MonoBehaviour
         _colorChanger = GetComponent<ColorChanger>();
     }
 
-    public List<Rigidbody> SpawnCubes(Cube startCube)
+    public List<Cube> SpawnCubes(Cube startCube)
     {
-        List<Rigidbody> rigidbodies = new();
+        List<Cube> cubes = new();
         Vector3 spawnPos = startCube.transform.position;
         int count = Random.Range(_minCountCubes, _maxCountCubes + 1);
 
@@ -25,9 +25,9 @@ public class Spawner : MonoBehaviour
         {
             Cube newCube = Instantiate(_prefab, spawnPos, Quaternion.identity).GetComponent<Cube>();
             newCube.Init(startCube.CurrentChanceSplit, startCube.transform.localScale, _colorChanger.RandomColor);
-            rigidbodies.Add(newCube.GetComponent<Rigidbody>());
+            cubes.Add(newCube);
         }
 
-        return rigidbodies;
+        return cubes;
     }
 }

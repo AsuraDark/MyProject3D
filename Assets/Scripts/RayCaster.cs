@@ -11,12 +11,6 @@ public class RayCaster : MonoBehaviour
 
     public event Action<Cube> RaycastHitted;
 
-    private void Update()
-    {
-        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(_ray, out _hit);
-    }
-
     private void Awake()
     {
         _inputReader = GetComponent<InputReader>();
@@ -24,16 +18,19 @@ public class RayCaster : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputReader.MouseClicked += CheckSpawnCube;
+        _inputReader.MouseClicked += StartRay;
     }
 
     private void OnDisable()
     {
-        _inputReader.MouseClicked -= CheckSpawnCube;
+        _inputReader.MouseClicked -= StartRay;
     }
 
-    private void CheckSpawnCube()
+    private void StartRay()
     {
+        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(_ray, out _hit);
+
         if (_hit.collider.TryGetComponent<Cube>(out Cube cube))
         {
             RaycastHitted?.Invoke(cube);

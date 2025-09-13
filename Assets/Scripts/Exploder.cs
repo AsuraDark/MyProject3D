@@ -6,20 +6,21 @@ public class Exploder : MonoBehaviour
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
 
-    public void Explosion(List<Rigidbody> rigidbodies, Cube cube)
+    public void Explosion(List<Cube> cubes, Cube explodingCube)
     {
-        Vector3 explosionCenter = cube.transform.position;
+        Vector3 explosionCenter = explodingCube.transform.position;
 
-        foreach (Rigidbody rb in rigidbodies)
+        foreach (Cube cube in cubes)
         {
-            rb.AddExplosionForce(_explosionForce, explosionCenter, _explosionRadius);
+            if(cube.TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
+                rigidbody.AddExplosionForce(_explosionForce, explosionCenter, _explosionRadius);
         }
     }
 
-    public void Explosion(Cube cube)
+    public void Explosion(Cube explodingCube)
     {
-        Vector3 explosionCenter = cube.transform.position;
-        float scale = cube.transform.localScale.x;
+        Vector3 explosionCenter = explodingCube.transform.position;
+        float scale = explodingCube.transform.localScale.x;
 
         float explosionRadius = _explosionRadius / scale;
         float explosionForce = _explosionForce / scale; 
