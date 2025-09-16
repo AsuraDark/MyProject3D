@@ -1,33 +1,57 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-[RequireComponent(typeof(ColorChanger))]
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Cube _prefab;
-    [SerializeField] private ColorChanger _colorChanger;
+    [SerializeField] private float _repeatRate;
+    [SerializeField] private int _poolCapacity;
+    [SerializeField] private int _poolMaxSize;
 
-    private int _minCountCubes = 2;
-    private int _maxCountCubes = 6;
+    private ObjectPool<Cube> _pool;
 
     private void Awake()
     {
-        _colorChanger = GetComponent<ColorChanger>();
+        _pool = new ObjectPool<Cube>(
+            createFunc: () => Instantiate(_prefab),
+            actionOnGet: (cube) => ActionOnGet(cube),
+            actionOnRelease: (cube) => ActionOnRelease(cube),
+            actionOnDestroy: (cube) => Destroy(cube),
+            defaultCapacity: _poolCapacity,
+            maxSize: _poolMaxSize,
+            collectionCheck: true
+        );
     }
 
-    public List<Cube> SpawnCubes(Cube startCube)
+    private void Start()
     {
-        List<Cube> cubes = new();
-        Vector3 spawnPos = startCube.transform.position;
-        int count = Random.Range(_minCountCubes, _maxCountCubes + 1);
+        InvokeRepeating(nameof(GetCube), 0.0f, _repeatRate);
+    }
 
-        for (int i = 0; i < count; i++)
-        {
-            Cube newCube = Instantiate(_prefab, spawnPos, Quaternion.identity);
-            newCube.Init(startCube.CurrentChanceSplit, startCube.transform.localScale, _colorChanger.RandomColor);
-            cubes.Add(newCube);
-        }
+    private Cube GetCube()
+    {
+        return _pool.Get();
+    }
 
-        return cubes;
+    private void ActionOnGet(Cube cube)
+    {
+        cube.Reset();
+        cube.gameObject.SetActive(true);
+
+        cube.CubeDisapeared += OnCubeDisapeared;
+    }
+
+    private void ActionOnRelease(Cube cube)
+    {
+        cube.gameObject.SetActive(false);
+
+        cube.CubeDisapeared -= OnCubeDisapeared;
+    }
+
+    private void OnCubeDisapeared(Cube cube)
+    {
+        _pool.Release(cube);
     }
 }
