@@ -62,6 +62,8 @@
     <Compile Include="Assets\Scripts\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\PlatformCollisionDetector.cs" />
     <Compile Include="Assets\Scripts\DisappearanceTimer.cs" />
+    <Compile Include="Assets\Scripts\Platform.cs" />
+    <Compile Include="Assets\Scripts\DisapearanceTriggerDetector.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
   </ItemGroup>
   <ItemGroup>

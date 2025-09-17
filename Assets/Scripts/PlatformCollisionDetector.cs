@@ -3,23 +3,22 @@ using UnityEngine;
 
 public class PlatformCollisionDetector : MonoBehaviour
 {
-    private string _nameTagPlatform = "Platform";
     private bool _isFirstCollision = false;
 
     public event Action PlatformCollisionDetected;
 
-    public void Reset()
-    {
-        _isFirstCollision = false;
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_isFirstCollision && collision.collider.CompareTag(_nameTagPlatform))
+        if (!_isFirstCollision && collision.gameObject.TryGetComponent<Platform>(out Platform platform))
         {
             _isFirstCollision = true;
 
             PlatformCollisionDetected?.Invoke();
         }
+    }
+
+    public void ResetStatus()
+    {
+        _isFirstCollision = false;
     }
 }

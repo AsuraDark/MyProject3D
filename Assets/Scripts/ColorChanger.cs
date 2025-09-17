@@ -12,7 +12,7 @@ public class ColorChanger : MonoBehaviour
         _baseColor = _renderer.material.color;
     }
 
-    public void Reset()
+    public void ResetStatus()
     {
         _renderer.material.color = _baseColor;
     }

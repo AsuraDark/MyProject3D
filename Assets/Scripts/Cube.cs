@@ -8,15 +8,14 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private ColorChanger _colorChanger;
-    [SerializeField] private PlatformCollisionDetector _collisionDetector;
-    [SerializeField] private DisappearanceTimer _disappearanceTimer;
-    [SerializeField] private Rigidbody _rigidbody;
-
     [SerializeField] private float _minSpawnLength = -5f;
     [SerializeField] private float _maxSpawnLength = 5f;
     [SerializeField] private float _spawnHeight = 20f;
-    [SerializeField] private float _minHeightDisappearance = 0f;
+
+    private ColorChanger _colorChanger;
+    private PlatformCollisionDetector _collisionDetector;
+    private DisappearanceTimer _disappearanceTimer;
+    private Rigidbody _rigidbody;
 
     public Action<Cube> CubeDisapeared;
 
@@ -40,13 +39,15 @@ public class Cube : MonoBehaviour
         _disappearanceTimer.TimerEnded -= OnTimerEnded;
     }
 
-    public void Reset()
+    public void ResetStatus()
     {
-        _collisionDetector.Reset();
-        _colorChanger.Reset();
+        _collisionDetector.ResetStatus();
+        _colorChanger.ResetStatus();
 
-        transform.position = CreateRandomPosition();
         _rigidbody.velocity = Vector3.zero;
+        _rigidbody.rotation = Quaternion.identity;
+        _rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.position = CreateRandomPosition();
     }
 
     private Vector3 CreateRandomPosition()
@@ -63,13 +64,5 @@ public class Cube : MonoBehaviour
     private void OnTimerEnded()
     {
         CubeDisapeared?.Invoke(this);
-    }
-
-    private void Update()
-    {
-        if (transform.position.y < _minHeightDisappearance)
-        {
-            CubeDisapeared?.Invoke(this);
-        }
     }
 }

@@ -9,6 +9,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _repeatRate;
     [SerializeField] private int _poolCapacity;
     [SerializeField] private int _poolMaxSize;
+    [SerializeField] private float _timeSpawnDelay;
+
+    private Coroutine _coroutine;
 
     private ObjectPool<Cube> _pool;
 
@@ -25,9 +28,26 @@ public class Spawner : MonoBehaviour
         );
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        InvokeRepeating(nameof(GetCube), 0.0f, _repeatRate);
+        _coroutine = StartCoroutine(StartSpawn());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(_coroutine);
+    }
+
+    private IEnumerator StartSpawn()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(_timeSpawnDelay);
+
+        while(enabled)
+        {
+            GetCube();
+
+            yield return waitTime;
+        }
     }
 
     private Cube GetCube()
@@ -37,8 +57,8 @@ public class Spawner : MonoBehaviour
 
     private void ActionOnGet(Cube cube)
     {
-        cube.Reset();
         cube.gameObject.SetActive(true);
+        cube.ResetStatus();
 
         cube.CubeDisapeared += OnCubeDisapeared;
     }
