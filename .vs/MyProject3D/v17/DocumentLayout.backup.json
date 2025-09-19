@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "D:\\Ijunior\\Unity Junior\\MyProject3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\disapearancetriggerdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\disapearancetriggerdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\disappearancetimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\disappearancetimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\platformcollisiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\platformcollisiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\colorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\colorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\disapearancetriggerdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\disapearancetriggerdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,93 +26,41 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Platform.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Platform.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Platform.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Platform.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Platform.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DisapearanceTriggerDetector.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\DisapearanceTriggerDetector.cs",
+              "RelativeDocumentMoniker": "Assets\\DisapearanceTriggerDetector.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\DisapearanceTriggerDetector.cs",
+              "RelativeToolTip": "Assets\\DisapearanceTriggerDetector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T09:54:01.598Z",
+              "WhenOpened": "2025-09-19T07:00:30.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DisapearanceTriggerDetector.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\DisapearanceTriggerDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DisapearanceTriggerDetector.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\DisapearanceTriggerDetector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DisapearanceTriggerDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Title": "Cube.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Cube.cs",
+              "RelativeDocumentMoniker": "Assets\\Cube.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Cube.cs",
+              "RelativeToolTip": "Assets\\Cube.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:22:38.084Z",
+              "WhenOpened": "2025-09-19T06:18:50.248Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cube.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Cube.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Cube.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Cube.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Cube.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwDgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:11:39.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ColorChanger.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ColorChanger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ColorChanger.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ColorChanger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ColorChanger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T11:19:13.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DisappearanceTimer.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\DisappearanceTimer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DisappearanceTimer.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\DisappearanceTimer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DisappearanceTimer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T11:01:56.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlatformCollisionDetector.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\PlatformCollisionDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlatformCollisionDetector.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\PlatformCollisionDetector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlatformCollisionDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:41:54.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Spawner.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Spawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Spawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Spawner.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwEMAAAApAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Spawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Spawner.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Spawner.cs",
+              "RelativeToolTip": "Assets\\Spawner.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwDkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T06:12:47.169Z",
+              "WhenOpened": "2025-09-19T06:14:39.44Z",
               "EditorCaption": ""
             }
           ]

@@ -1,68 +1,42 @@
 using System;
-using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine;
 
-[RequireComponent(typeof(ColorChanger))]
-[RequireComponent(typeof(PlatformCollisionDetector))]
-[RequireComponent(typeof(DisappearanceTimer))]
 [RequireComponent(typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private float _minSpawnLength = -5f;
-    [SerializeField] private float _maxSpawnLength = 5f;
-    [SerializeField] private float _spawnHeight = 20f;
+    [SerializeField] private float _spawnLength;
+    [SerializeField] private float _spawnHeight;
+    [SerializeField] private float speed;
 
-    private ColorChanger _colorChanger;
-    private PlatformCollisionDetector _collisionDetector;
-    private DisappearanceTimer _disappearanceTimer;
     private Rigidbody _rigidbody;
+    private Vector3 _direction;
 
     public Action<Cube> CubeDisapeared;
 
     private void Awake()
     {
-        _collisionDetector = GetComponent<PlatformCollisionDetector>();
-        _colorChanger = GetComponent<ColorChanger>();
-        _disappearanceTimer = GetComponent<DisappearanceTimer>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
+    private void FixedUpdate()
     {
-        _collisionDetector.PlatformCollisionDetected += OnCollisionDetected;
-        _disappearanceTimer.TimerEnded += OnTimerEnded;
+        _rigidbody.MovePosition(_rigidbody.position + _direction * Time.fixedDeltaTime);
     }
 
-    private void OnDisable()
+    public void Init(Vector3 spawnCenter, Vector3 direction)
     {
-        _collisionDetector.PlatformCollisionDetected -= OnCollisionDetected;
-        _disappearanceTimer.TimerEnded -= OnTimerEnded;
-    }
-
-    public void ResetStatus()
-    {
-        _collisionDetector.ResetStatus();
-        _colorChanger.ResetStatus();
-
+        transform.position = CreateRandomPosition(spawnCenter);
+        transform.rotation = Quaternion.identity;
+        _direction = direction.normalized;
         _rigidbody.velocity = Vector3.zero;
-        _rigidbody.rotation = Quaternion.identity;
         _rigidbody.angularVelocity = Vector3.zero;
-        _rigidbody.position = CreateRandomPosition();
     }
 
-    private Vector3 CreateRandomPosition()
+    private Vector3 CreateRandomPosition(Vector3 spawnCenter)
     {
-        return new Vector3(Random.Range(_minSpawnLength, _maxSpawnLength), _spawnHeight, Random.Range(_minSpawnLength, _maxSpawnLength));
-    }
-
-    private void OnCollisionDetected()
-    {
-        _colorChanger.SetRandomColor();
-        _disappearanceTimer.StartTimer();
-    }
-
-    private void OnTimerEnded()
-    {
-        CubeDisapeared?.Invoke(this);
+        return new Vector3(Random.Range(spawnCenter.x - _spawnLength, spawnCenter.x + _spawnLength), 
+                           _spawnHeight, 
+                           Random.Range(spawnCenter.z - _spawnLength, spawnCenter.z + _spawnLength));
     }
 }
