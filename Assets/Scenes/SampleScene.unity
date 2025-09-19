@@ -244,9 +244,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3990266109953282027, guid: ba005a1ee49c18a428a8f1c36b7c741f, type: 3}
   _timeSpawnDelay: 1
+  _direction: {x: 0, y: 0, z: 1}
+  _spawnLength: 2
+  _spawnHeight: 0.5
   _poolCapacity: 5
   _poolMaxSize: 5
-  _direction: {x: 0, y: 0, z: 1}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,9 +535,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 3990266109953282027, guid: ba005a1ee49c18a428a8f1c36b7c741f, type: 3}
   _timeSpawnDelay: 2
+  _direction: {x: 1, y: 0, z: 0}
+  _spawnLength: 2
+  _spawnHeight: 0.5
   _poolCapacity: 5
   _poolMaxSize: 1
-  _direction: {x: 1, y: 0, z: 0}
 --- !u!64 &1866117261
 MeshCollider:
   m_ObjectHideFlags: 0

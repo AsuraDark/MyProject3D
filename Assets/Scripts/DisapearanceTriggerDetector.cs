@@ -8,7 +8,7 @@ public class DisapearanceTriggerDetector : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Cube>(out Cube cube))
         {
-            cube.CubeDisapeared?.Invoke(cube);
+            cube.OnCubeDisapeared();
         }
     }
 }

@@ -1,17 +1,18 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Cube _prefab;
     [SerializeField] private float _timeSpawnDelay;
+    [SerializeField] private Vector3 _direction;
+    [SerializeField] private float _spawnLength;
+    [SerializeField] private float _spawnHeight;
+
     [SerializeField] private int _poolCapacity;
     [SerializeField] private int _poolMaxSize;
-    [SerializeField] private Vector3 _direction;
 
     private Coroutine _coroutine;
 
@@ -40,6 +41,13 @@ public class Spawner : MonoBehaviour
         StopCoroutine(_coroutine);
     }
 
+    private Vector3 CreateRandomPosition(Vector3 spawnCenter)
+    {
+        return new Vector3(Random.Range(spawnCenter.x - _spawnLength, spawnCenter.x + _spawnLength),
+                           _spawnHeight,
+                           Random.Range(spawnCenter.z - _spawnLength, spawnCenter.z + _spawnLength));
+    }
+
     private IEnumerator StartSpawn()
     {
         WaitForSeconds waitTime = new WaitForSeconds(_timeSpawnDelay);
@@ -55,7 +63,8 @@ public class Spawner : MonoBehaviour
     private void ActionOnGet(Cube cube)
     {
         cube.gameObject.SetActive(true);
-        cube.Init(transform.position, _direction);
+        cube.transform.position = CreateRandomPosition(transform.position);
+        cube.Init(_direction);
 
         cube.CubeDisapeared += _pool.Release;
     }
