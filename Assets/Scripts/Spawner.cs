@@ -66,13 +66,13 @@ public class Spawner : MonoBehaviour
         cube.transform.position = CreateRandomPosition(transform.position);
         cube.Init(_direction);
 
-        cube.CubeDisapeared += _pool.Release;
+        cube.Disappeared += _pool.Release;
     }
 
     private void ActionOnRelease(Cube cube)
     {
         cube.gameObject.SetActive(false);
 
-        cube.CubeDisapeared -= _pool.Release;
+        cube.Disappeared -= _pool.Release;
     }
 }

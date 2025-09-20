@@ -9,7 +9,7 @@ public class Cube : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _direction;
 
-    public event Action<Cube> CubeDisapeared;
+    public event Action<Cube> Disappeared;
 
     private void Awake()
     {
@@ -29,8 +29,8 @@ public class Cube : MonoBehaviour
         _rigidbody.angularVelocity = Vector3.zero;
     }
 
-    public void OnCubeDisapeared()
+    public void Disappear()
     {
-        CubeDisapeared.Invoke(this);
+        Disappeared.Invoke(this);
     }
 }
