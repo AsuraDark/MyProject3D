@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\DisapearanceTriggerDetector.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
   </ItemGroup>

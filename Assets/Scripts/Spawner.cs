@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int _poolCapacity;
     [SerializeField] private int _poolMaxSize;
 
+    [SerializeField] private Target _target;
+
     private Coroutine _coroutine;
 
     private ObjectPool<Cube> _pool;
@@ -64,7 +66,7 @@ public class Spawner : MonoBehaviour
     {
         cube.gameObject.SetActive(true);
         cube.transform.position = CreateRandomPosition(transform.position);
-        cube.Init(_direction);
+        cube.Init(_direction, _target);
 
         cube.Disappeared += _pool.Release;
     }
