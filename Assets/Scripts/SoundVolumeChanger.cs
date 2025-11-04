@@ -1,34 +1,34 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(AlarmSystemDetector))]
-public class SoundPlayStop : MonoBehaviour
+[RequireComponent(typeof(AlarmSystem))]
+public class SoundVolumeChanger : MonoBehaviour
 {
     [SerializeField] private float _maxVolume = 1f;
     [SerializeField] private float _minVolume = 0f;
     [SerializeField] private float _volumeChangeValue = 0.001f;
     [SerializeField] private float _timeDelay = 0.1f;
 
-    private AlarmSystemDetector _alarmSystemDetector;
+    private AlarmSystem _alarmSystem;
     private AudioSource _audioSource;
     private Coroutine _coroutine;
 
     private void Awake()
     {
-        _alarmSystemDetector = GetComponent<AlarmSystemDetector>();
+        _alarmSystem = GetComponent<AlarmSystem>();
         _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
     {
-        _alarmSystemDetector.ThiefEntered += IncreaseChangeVolume;
-        _alarmSystemDetector.ThiefExited += DecreaseChangeVolume;
+        _alarmSystem.AlarmEnabled += IncreaseChangeVolume;
+        _alarmSystem.AlarmDisabled += DecreaseChangeVolume;
     }
 
     private void OnDisable()
     {
-        _alarmSystemDetector.ThiefEntered -= IncreaseChangeVolume;
-        _alarmSystemDetector.ThiefExited -= DecreaseChangeVolume;
+        _alarmSystem.AlarmEnabled -= IncreaseChangeVolume;
+        _alarmSystem.AlarmDisabled -= DecreaseChangeVolume;
     }
 
     private void Update()

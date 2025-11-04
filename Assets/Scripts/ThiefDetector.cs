@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class AlarmSystemDetector : MonoBehaviour
+public class ThiefDetector : MonoBehaviour
 {
-    private bool _isAlarmEnable = false;
+    private bool _isThiefEntered = false;
 
     public event Action ThiefEntered;
     public event Action ThiefExited;
@@ -12,15 +12,14 @@ public class AlarmSystemDetector : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Thief>(out Thief thief))
         {
-            if (_isAlarmEnable == false)
+            if(_isThiefEntered == false)
             {
-                _isAlarmEnable = true;
+                _isThiefEntered = true;
                 ThiefEntered?.Invoke();
             }
-
             else
             {
-                _isAlarmEnable = false;
+                _isThiefEntered = false;
                 ThiefExited?.Invoke();
             }
         }
