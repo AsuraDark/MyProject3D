@@ -1,77 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class Spawner : MonoBehaviour
+public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
 {
-    [SerializeField] private Cube _prefab;
-    [SerializeField] private float _repeatRate;
-    [SerializeField] private int _poolCapacity;
-    [SerializeField] private int _poolMaxSize;
-    [SerializeField] private float _timeSpawnDelay;
+    [SerializeField] protected T _prefab;
+    [SerializeField] protected float _repeatRate;
+    [SerializeField] protected int _poolCapacity;
+    [SerializeField] protected int _poolMaxSize;
 
-    private Coroutine _coroutine;
+    protected Coroutine _coroutine;
 
-    private ObjectPool<Cube> _pool;
+    protected ObjectPool<T> _pool;
 
-    private void Awake()
+    public event Action SpawnedObject;
+
+    public int SpawnedObjects { get; protected set; } = 0;
+
+    public int CreatedObjects => _pool.CountAll;
+
+    public int ActiveObjects => _pool.CountActive;
+
+
+    protected void Awake()
     {
-        _pool = new ObjectPool<Cube>(
+        _pool = new ObjectPool<T>(
             createFunc: () => Instantiate(_prefab),
-            actionOnGet: (cube) => ActionOnGet(cube),
-            actionOnRelease: (cube) => ActionOnRelease(cube),
-            actionOnDestroy: (cube) => Destroy(cube),
+            actionOnGet: (customObject) => ActionOnGet(customObject),
+            actionOnRelease: (customObject) => ActionOnRelease(customObject),
+            actionOnDestroy: (customObject) => Destroy(customObject),
             defaultCapacity: _poolCapacity,
             maxSize: _poolMaxSize,
             collectionCheck: true
         );
     }
 
-    private void OnEnable()
+    protected virtual void Spawn()
     {
-        _coroutine = StartCoroutine(StartSpawn());
+        GetCustomObject();
     }
 
-    private void OnDisable()
-    {
-        StopCoroutine(_coroutine);
-    }
-
-    private IEnumerator StartSpawn()
-    {
-        WaitForSeconds waitTime = new WaitForSeconds(_timeSpawnDelay);
-
-        while(enabled)
-        {
-            GetCube();
-
-            yield return waitTime;
-        }
-    }
-
-    private Cube GetCube()
+    protected T GetCustomObject()
     {
         return _pool.Get();
     }
 
-    private void ActionOnGet(Cube cube)
+    protected virtual void ActionOnGet(T customObject)
     {
-        cube.gameObject.SetActive(true);
-        cube.ResetStatus();
-
-        cube.CubeDisapeared += OnCubeDisapeared;
+        customObject.gameObject.SetActive(true);
+        SpawnedObject?.Invoke();
+        SpawnedObjects++;
     }
 
-    private void ActionOnRelease(Cube cube)
+    protected virtual void ActionOnRelease(T customObject)
     {
-        cube.gameObject.SetActive(false);
-
-        cube.CubeDisapeared -= OnCubeDisapeared;
+        customObject.gameObject.SetActive(false);
     }
 
-    private void OnCubeDisapeared(Cube cube)
+    protected virtual void OnCustomObjectDisapeared(T customObject)
     {
-        _pool.Release(cube);
+        _pool.Release(customObject);
     }
 }
