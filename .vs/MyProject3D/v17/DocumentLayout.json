@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Ijunior\\Unity Junior\\MyProject3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\target.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\target.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\textchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\textchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\scaleto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scaleto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|D:\\Ijunior\\Unity Junior\\MyProject3D\\assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\rotationto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rotationto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\moveto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\moveto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|d:\\ijunior\\unity junior\\myproject3d\\assets\\scripts\\colorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD3C423C-847C-940E-57E8-7AD2E008322F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\colorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Target.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Target.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Target.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Target.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Target.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwDgAAAANAAAAAAAAAA==",
+              "Title": "TextChanger.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\TextChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TextChanger.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\TextChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TextChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T10:40:40.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Spawner.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Spawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Spawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Spawner.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwEIAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T11:49:31.049Z",
+              "WhenOpened": "2026-01-02T06:58:46.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cube.cs",
-              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Cube.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Cube.cs",
-              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\Cube.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Cube.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwBUAAAAZAAAAAAAAAA==",
+              "Title": "ScaleTo.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ScaleTo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScaleTo.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ScaleTo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScaleTo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T11:48:45.286Z",
+              "WhenOpened": "2026-01-02T06:58:45.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RotationTo.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\RotationTo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RotationTo.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\RotationTo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RotationTo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T06:58:44.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MoveTo.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\MoveTo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MoveTo.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\MoveTo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MoveTo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T06:58:43.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ColorChanger.cs",
+              "DocumentMoniker": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ColorChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ColorChanger.cs",
+              "ToolTip": "D:\\Ijunior\\Unity Junior\\MyProject3D\\Assets\\Scripts\\ColorChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ColorChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T06:56:18.835Z",
               "EditorCaption": ""
             }
           ]
