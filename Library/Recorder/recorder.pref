@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 3
+  take: 1
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -45,7 +45,7 @@ MonoBehaviour:
       m_Leaf: Recordings
       m_ForceAssetFolder: 0
       m_AbsolutePath: 
-    m_FileName: "<\u0422\u0440\u0430\u043D\u0441\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F>_<Take>"
+    m_FileName: <Glitter Effect>_<Take>
   m_Version: 1
   encoderSettings:
     rid: 6947263829155774464
