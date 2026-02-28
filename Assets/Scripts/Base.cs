@@ -1,99 +1,136 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(GiftScanner))]
 public class Base : MonoBehaviour
 {
-    [SerializeField] private GiftScanner _giftScanner;
-    [SerializeField] private float _countGifts = 0;
-    [SerializeField] private List<Unit> _units;
+    [SerializeField] private Scanner _scanner;
+    [SerializeField] private UnitSpawner _unitSpawner;
+    [SerializeField] private int _unitStartValue;
+    [SerializeField] private int _unitCreateValue;
+    [SerializeField] private Storage _inventory;
+    [SerializeField] private FlagManager _flagManager;
 
-    private List<Gift> _unCollectedGifts = new List<Gift>();
-    private List<Gift> _targetGifts = new List<Gift>();
+    private List<Resource> _resources = new();
+    private List<Unit> _units = new();
 
-    private void Awake()
-    {
-        _giftScanner = GetComponent<GiftScanner>();
-    }
+    private bool _createBase = false;
+    private int _resourceForCreateUnit = 3;
+    private int _resourceForCreateBase = 5;
+    private int _countUnits = 0;
+    private int _countMaxUnits = 8;
+    private Flag _flag;
 
-    private void Start()
-    {
-        _giftScanner.StartScan();
-    }
+    public event Action<Resource> ResourceTransfered;
 
     private void OnEnable()
     {
-        _giftScanner.GiftFound += AddGift;
+        _scanner.ResourceFounded += AddResourse;
+        _flagManager.FlagCreated += AddResourseForNewBase;
     }
 
     private void OnDisable()
     {
-        _giftScanner.GiftFound -= AddGift;
+        _scanner.ResourceFounded -= AddResourse;
+        _flagManager.FlagCreated -= AddResourseForNewBase;
     }
 
-    public void TakeGift(Gift gift)
+    private void Start()
     {
-        if (_targetGifts.Contains(gift))
-        {
-             _targetGifts.Remove(gift);
-        }
-
-        _countGifts++;
+        CreateUnits(_unitStartValue);
     }
 
-    private void Update()
+    private void Work()
     {
-        int count = 0;
+        Unit unit;
+        Resource resource;
 
-        for (int i = 0 - count; i < _unCollectedGifts.Count; i++)
+        if (_createBase == true && _countUnits > 1)
         {
-            if (_unCollectedGifts[i] == null)
+            if (_units.Count > 0 && _inventory.GetResource(_resourceForCreateBase) == _resourceForCreateBase)
             {
-                count++;
-                _unCollectedGifts.RemoveAt(i);
+                _createBase = false;
+
+                unit = _units.Last();
+                _units.Remove(unit);
+
+                unit.CreateNewBase(_flag);
             }
         }
 
-        if (_unCollectedGifts.Count == 0)
+        if (_units.Count > 0 && _resources.Count > 0)
         {
-            return;
+            unit = _units.Last();
+            resource = _resources.Last();
+            _units.Remove(unit);
+            _resources.Remove(resource);
+
+            unit.TransferResource(resource);
         }
 
-        foreach (Gift gift in _unCollectedGifts)
+        if (_createBase == false && _countUnits < _countMaxUnits || _countUnits == 1)
         {
-            if(_targetGifts.Contains(gift))
+            if (_inventory.GetResource(_resourceForCreateUnit) == _resourceForCreateUnit)
             {
-                continue;
-            }
-
-            foreach (Unit unit in _units)
-            {
-                if (unit.IsWorking == false)
-                {
-                    unit.StartMove(gift.transform.position);
-                    _targetGifts.Add(gift);
-
-                    break;
-                }
-            }
-        }
-
-        foreach (Gift gift in _targetGifts)
-        {
-            if(_unCollectedGifts.Contains(gift))
-            {
-                _unCollectedGifts.Remove(gift);
+                CreateUnits(_unitCreateValue);
             }
         }
     }
 
-    private void AddGift(Gift gift)
+    private void AddResourseForNewBase(Flag flag)
     {
-        if (_unCollectedGifts.Contains(gift) == false && _targetGifts.Contains(gift) == false)
+        _createBase = true;
+
+        _flag = flag;
+
+        Work();
+    }
+
+    private void AddResourse(Resource resource)
+    {
+        _resources.Add(resource);
+
+        Work();
+    }
+
+    private void CreateUnits(int unitCreateValue)
+    {
+        for (int i = 0; i < unitCreateValue; i++)
         {
-            _unCollectedGifts.Add(gift);
+            Unit unit = _unitSpawner.CreateUnit();
+
+            unit.ResourceTransfered += AddUnit;
+
+            unit.UnitDisabled += DisableUnit;
+
+            _units.Add(unit);
+
+            _countUnits++;
+
+            Work();
         }
+    }
+
+    private void AddUnit(Unit unit, Resource resource)
+    {
+        ResourceTransfered?.Invoke(resource);
+
+        _units.Add(unit);
+
+        Work();
+    }
+
+    private void DisableUnit(Unit unit)
+    {
+        unit.ResourceTransfered -= AddUnit;
+
+        unit.UnitDisabled -= DisableUnit;
+
+        _unitSpawner.ReleaseGameObject(unit);
+
+        _countUnits--;
+
+        Work();
     }
 }

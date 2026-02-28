@@ -1,108 +1,87 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Unit : MonoBehaviour
 {
+    [SerializeField] private Base _basePrefab;
     [SerializeField] private float _speed;
-    [SerializeField] private BaseDetector _baseDetector;
-    [SerializeField] private GiftDetector _giftDetector;
-    [SerializeField] private Transform _container;
+    [SerializeField] private float _timeRotate;
 
-    private Vector3 _startPosition;
+    private WaitForSeconds _waitTravelTime;
+    private WaitForSeconds _waitReturn;
+    private WaitForSeconds _waitTravelTimeToNewBase;
 
-    private Gift _gift;
+    [SerializeField] private Vector3 _startPosition;
+    private Vector3 _startLocalPosition;
+    private Vector3 _startDirection;
 
-    private Coroutine _coroutine;
+    public event Action<Unit, Resource> ResourceTransfered;
+    public event Action<Unit> UnitDisabled;
 
-    public bool IsWorking { get; private set; } = false;
-
-    private void Awake()
+    public void Init()
     {
         _startPosition = transform.position;
+        _startLocalPosition = transform.localPosition;
+        _startDirection = transform.forward;
     }
 
-    private void Start()
+    public void TransferResource(Resource resource)
     {
-        _giftDetector.gameObject.SetActive(false);
-        _baseDetector.gameObject.SetActive(false);
+        Sequence sequence = DOTween.Sequence();
+        Vector3 resourcePosition = resource.transform.position;
+        float _timeTravel = (resourcePosition - _startPosition).magnitude / _speed;
+
+        _waitTravelTime = new WaitForSeconds(_timeRotate + _timeTravel + _timeRotate);
+        _waitReturn = new WaitForSeconds(_timeTravel + _timeRotate);
+        
+        sequence.Append(transform.DOLookAt(resourcePosition, _timeRotate));
+        sequence.Append(transform.DOMove(resourcePosition, _timeTravel));
+        sequence.Append(transform.DOLookAt(_startPosition, _timeRotate));
+        sequence.Append(transform.DOMove(_startPosition, _timeTravel));
+        sequence.Append(transform.DOLookAt(_startPosition + _startDirection, _timeRotate));
+
+        StartCoroutine(UpdateResourceInfo(resource));
     }
 
-    private void OnEnable()
+    private IEnumerator UpdateResourceInfo(Resource resource)
     {
-        _giftDetector.GiftDetected += TakeGift;
-        _baseDetector.BaseDetected += TransportGift;
+        yield return _waitTravelTime;
+
+        resource.transform.SetParent(transform);
+
+        yield return _waitReturn;
+
+        resource.transform.SetParent(null);
+
+        ResourceTransfered?.Invoke(this, resource);
+
+        resource.Transfer();
     }
 
-    private void OnDisable()
+    public void CreateNewBase(Flag flag)
     {
-        _giftDetector.GiftDetected -= TakeGift;
-        _baseDetector.BaseDetected -= TransportGift;
+        Sequence sequence = DOTween.Sequence();
+        Vector3 flagPosition = flag.transform.position;
+        float _timeTravel = (flagPosition - _startLocalPosition).magnitude / _speed;
+
+        _waitTravelTimeToNewBase = new WaitForSeconds(_timeRotate + _timeTravel + _timeRotate);
+
+        sequence.Append(transform.DOLookAt(flagPosition, _timeRotate));
+        sequence.Append(transform.DOMove(flagPosition, _timeTravel));
+
+        StartCoroutine(CreateBase(_timeTravel, flagPosition, flag));
     }
 
-    public void StartMove(Vector3 targetPosition)
+    private IEnumerator CreateBase(float timeTravel, Vector3 flagPosition, Flag flag)
     {
-        StopMove();
-        _coroutine = StartCoroutine(Move(targetPosition));
-    }
+        yield return _waitTravelTimeToNewBase;
 
-    public void StopMove()
-    {
-        if (_coroutine != null)
-        {
-            StopCoroutine(_coroutine);
-        }
-    }
+        Base newBase = Instantiate(_basePrefab, flagPosition, _basePrefab.transform.rotation);
 
-    private IEnumerator Move(Vector3 targetPosition)
-    {
-        IsWorking = true;
+        flag.Disable();
 
-        Vector3 direction;
-
-        while(Math.Round(transform.position.x, 1) != Math.Round(targetPosition.x, 1))
-        {
-            direction = targetPosition - transform.position;
-            transform.Translate(direction.normalized * _speed * Time.deltaTime);
-
-            if(Math.Round(transform.position.x, 1) == Math.Round(targetPosition.x, 1))
-            {
-                _giftDetector.gameObject.SetActive(true);
-            }
-
-            yield return null;
-        }
-
-        while (Math.Round(transform.position.x, 1) != Math.Round(_startPosition.x, 1))
-        {
-            direction = _startPosition - transform.position;
-            transform.Translate(direction.normalized * _speed * Time.deltaTime);
-
-            if (Math.Round(transform.position.x, 1) == Math.Round(_startPosition.x, 1))
-            {
-                _baseDetector.gameObject.SetActive(true);
-            }
-            yield return null;
-        }
-
-        IsWorking = false;
-    }
-
-    private void TakeGift(Gift gift)
-    {
-        _giftDetector.gameObject.SetActive(false);
-
-        gift.transform.position = _container.position;
-        gift.transform.SetParent(_container);
-
-        _gift = gift;
-    }
-
-    private void TransportGift(Base @base)
-    {
-        _baseDetector.gameObject.SetActive(false);
-
-        @base.TakeGift(_gift);
+        UnitDisabled?.Invoke(this);
     }
 }
