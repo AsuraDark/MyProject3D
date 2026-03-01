@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class FlagManager : MonoBehaviour
 {
-    [SerializeField] private FlagPreviewer _flagPreview;
+    [SerializeField] private FlagPreviewer _flagPreviewer;
     [SerializeField] private Flag _flag;
     [SerializeField] private Transform _camera;
-    [SerializeField] private Player _player;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private bool _canCreatePreviewFlag;
-    [SerializeField] private bool _canCreateFlag;
+    [SerializeField] private bool _canCreatePreviewFlag = false;
+    [SerializeField] private bool _canCreateFlag = false;
 
     private RaycastHit _hitInfo;
 
@@ -18,18 +17,7 @@ public class FlagManager : MonoBehaviour
 
     private void Awake()
     {
-        _camera = FindAnyObjectByType<Camera>().transform;
-        _player = FindAnyObjectByType<Player>();
-    }
-
-    private void OnEnable()
-    {
-        _player.BaseBuilding += CreateFlag;
-    }
-
-    private void OnDisable()
-    {
-        _player.BaseBuilding -= CreateFlag;
+        _camera = Camera.main.transform;
     }
 
     private void FixedUpdate()
@@ -37,13 +25,9 @@ public class FlagManager : MonoBehaviour
         CreatePreviewFlag(_canCreatePreviewFlag);
     }
 
-    private void OnMouseDown()
+    public void ChangePosibilityCreateFlag()
     {
         _canCreatePreviewFlag = !_canCreatePreviewFlag;
-    }
-
-    private void OnMouseUp()
-    {
         _canCreateFlag = !_canCreateFlag;
     }
 
@@ -54,16 +38,16 @@ public class FlagManager : MonoBehaviour
 
         if (Physics.Raycast(_camera.position, direction, out _hitInfo, float.MaxValue, _layerMask) && canDrawPrevieFlag)
         {
-            if (!_flagPreview.IsActive)
+            if (!_flagPreviewer.IsActive)
             {
-                _flagPreview.Enable();
+                _flagPreviewer.Enable();
             }
 
-            _flagPreview.SetPosition(_hitInfo.point);
+            _flagPreviewer.SetPosition(_hitInfo.point);
         }
         else
         {
-            _flagPreview.Disable();
+            _flagPreviewer.Disable();
         }
     }
 

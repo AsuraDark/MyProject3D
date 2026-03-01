@@ -1,36 +1,17 @@
+using System;
 using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    private const string Horizontal = nameof(Horizontal);
-    private const string Vertical = nameof(Vertical);
-
-    private readonly string _mouseX = "Mouse X";
-    private readonly string _mouseY = "Mouse Y";
     private readonly int _mouseButton = 0;
 
-    [SerializeField] private bool _isClickSetFlag = false;
-
-    public Vector3 MoveDirection { get; private set; }
-    public Vector2 LookDirection { get; private set; }
+    public event Action _leftMouseButtonisClicked;
 
     private void Update()
     {
-        MoveDirection = new Vector3(Input.GetAxis(Horizontal), 0, Input.GetAxis(Vertical));
-
-        LookDirection = new Vector2(Input.GetAxis(_mouseX), -Input.GetAxis(_mouseY));
-
         if (Input.GetMouseButtonDown(_mouseButton))
         {
-            _isClickSetFlag = true;
+            _leftMouseButtonisClicked?.Invoke();
         }
-    }
-
-    public bool GetClickSetFlag()
-    {
-        bool localValue = _isClickSetFlag;
-        _isClickSetFlag = false;
-
-        return localValue;
     }
 }

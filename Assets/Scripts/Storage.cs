@@ -14,6 +14,15 @@ public class Storage : MonoBehaviour
         _base = GetComponent<Base>();
     }
 
+    private void OnEnable()
+    {
+        _base.ResourceTransfered += AddResource;
+    }
+
+    private void OnDisable()
+    {
+        _base.ResourceTransfered -= AddResource;
+    }
     public int GetResource(int countRequiredResources)
     {
         if (_countResources < countRequiredResources)
@@ -28,16 +37,6 @@ public class Storage : MonoBehaviour
 
             return countRequiredResources;
         }
-    }
-
-    private void OnEnable()
-    {
-        _base.ResourceTransfered += AddResource;
-    }
-
-    private void OnDisable()
-    {
-        _base.ResourceTransfered -= AddResource;
     }
 
     private void AddResource(Resource resource)

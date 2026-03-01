@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2618a3842ae2c54ca5fa1e19b5bac33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isClickSetFlag: 0
 --- !u!114 &370312059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 370312056}
-  _flagManager: {fileID: 0}
+  _camera: {fileID: 0}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &370312060
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +385,7 @@ GameObject:
   - component: {fileID: 1278175012}
   - component: {fileID: 1278175011}
   - component: {fileID: 1278175015}
+  - component: {fileID: 1278175016}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -495,6 +498,18 @@ MonoBehaviour:
   _spawnDelay: 1
   _spawnRange: 5
   _spawnHeight: 0
+--- !u!114 &1278175016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278175010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3899e096d43b784099723ad3b463099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &834981857684647457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -507,10 +522,6 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 963194228}
-    - target: {fileID: 1902457546686295665, guid: 13a4281f71a989b4ba369f47830c6b8d, type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 370312059}
     - target: {fileID: 1932368430310811579, guid: 13a4281f71a989b4ba369f47830c6b8d, type: 3}
       propertyPath: m_Name
       value: Base

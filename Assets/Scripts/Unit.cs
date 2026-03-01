@@ -8,12 +8,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private Base _basePrefab;
     [SerializeField] private float _speed;
     [SerializeField] private float _timeRotate;
+    [SerializeField] private Vector3 _startPosition;
 
     private WaitForSeconds _waitTravelTime;
     private WaitForSeconds _waitReturn;
     private WaitForSeconds _waitTravelTimeToNewBase;
 
-    [SerializeField] private Vector3 _startPosition;
     private Vector3 _startLocalPosition;
     private Vector3 _startDirection;
 

@@ -60,17 +60,19 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\Scripts\FlagPreviewer.cs" />
+    <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\InputReader.cs" />
     <Compile Include="Assets\Scripts\Storage.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\GhostCharacter_Free\Scripts\GhostScript.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Base.cs" />
+    <Compile Include="Assets\Scripts\FlagRayCaster.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\FlagManager.cs" />
     <Compile Include="Assets\Scripts\Scanner.cs" />
     <Compile Include="Assets\Scripts\ResourceSpawner.cs" />
+    <Compile Include="Assets\Scripts\GameZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Baker House\Readme.txt" />

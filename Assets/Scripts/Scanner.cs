@@ -35,10 +35,8 @@ public class Scanner : MonoBehaviour
 
         foreach (var item in _resourceColliders)
         {
-            if (item.TryGetComponent(out Resource resource) && !resource.IsFound)
+            if (item.TryGetComponent(out Resource resource) && resource.isActiveAndEnabled)
             {
-                resource.Find();
-
                 ResourceFounded?.Invoke(resource);
             }
         }

@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639077590572828547
+      ticks: 639079558585284273
     m_Hash: 2650356939
   m_LockFileStatus:
     m_FilePath: D:/IJunior/IJuniorUnityJunior3D/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639077590572980399
+      ticks: 639079558585284273
     m_Hash: 1905988516
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
