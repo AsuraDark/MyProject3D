@@ -7,10 +7,8 @@ public class FlagRayCaster : MonoBehaviour
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private Transform _camera;
     [SerializeField] private LayerMask _layerMask;
-    private FlagManager _flagManager;
+    private FlagPlacer _flagManager;
 
-    public event Action RayCastTargeted;
-    public event Action RayCastNotTargeted;
 
     private void Awake()
     {
@@ -36,7 +34,7 @@ public class FlagRayCaster : MonoBehaviour
 
         if (Physics.Raycast(_camera.position, direction, out hit, float.MaxValue))
         {
-            if (hit.collider.TryGetComponent(out FlagManager flagManager))
+            if (hit.collider.TryGetComponent(out FlagPlacer flagManager))
             {
                 _flagManager = flagManager;
                 _flagManager.ChangePosibilityCreateFlag();

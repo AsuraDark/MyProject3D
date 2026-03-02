@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public static class ResourceManager
+public static class ResourceProvider
 {
     private static List<Resource> _freeResources = new();
     private static List<Resource> _busyResources = new();

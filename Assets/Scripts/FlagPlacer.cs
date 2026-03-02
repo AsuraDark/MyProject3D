@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-public class FlagManager : MonoBehaviour
+public class FlagPlacer : MonoBehaviour
 {
     [SerializeField] private FlagPreviewer _flagPreviewer;
     [SerializeField] private Flag _flag;

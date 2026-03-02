@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\IJunior\\IJuniorUnityJunior3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|d:\\ijunior\\ijuniorunityjunior3d\\assets\\scripts\\flagraycaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|d:\\ijunior\\ijuniorunityjunior3d\\assets\\scripts\\flagplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flagplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|D:\\IJunior\\IJuniorUnityJunior3D\\assets\\scripts\\flagraycaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flagraycaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|d:\\ijunior\\ijuniorunityjunior3d\\assets\\scripts\\flagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|D:\\IJunior\\IJuniorUnityJunior3D\\assets\\scripts\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|D:\\IJunior\\IJuniorUnityJunior3D\\assets\\scripts\\resourceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resourceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|D:\\IJunior\\IJuniorUnityJunior3D\\assets\\scripts\\gamezone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12906005-A8E6-B5BC-6895-8DD48F6AA82B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamezone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +30,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "GameZone.cs",
+              "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\GameZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameZone.cs",
+              "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\GameZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameZone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T00:14:53.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResourceProvider.cs",
+              "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\ResourceProvider.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ResourceProvider.cs",
+              "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\ResourceProvider.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ResourceProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T00:13:34.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InputReader.cs",
+              "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\InputReader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputReader.cs",
+              "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\InputReader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputReader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T00:13:03.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FlagRayCaster.cs",
               "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagRayCaster.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FlagRayCaster.cs",
               "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagRayCaster.cs",
               "RelativeToolTip": "Assets\\Scripts\\FlagRayCaster.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-01T13:44:21.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FlagManager.cs",
-              "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FlagManager.cs",
-              "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FlagManager.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAADEAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FlagPlacer.cs",
+              "DocumentMoniker": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagPlacer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FlagPlacer.cs",
+              "ToolTip": "D:\\IJunior\\IJuniorUnityJunior3D\\Assets\\Scripts\\FlagPlacer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FlagPlacer.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-01T13:43:41.996Z",
               "EditorCaption": ""

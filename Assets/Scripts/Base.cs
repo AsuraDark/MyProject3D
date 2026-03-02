@@ -10,7 +10,7 @@ public class Base : MonoBehaviour
     [SerializeField] private int _unitStartValue;
     [SerializeField] private int _unitCreateValue;
     [SerializeField] private Storage _inventory;
-    [SerializeField] private FlagManager _flagManager;
+    [SerializeField] private FlagPlacer _flagManager;
 
     private List<Unit> _units = new();
 
@@ -58,10 +58,10 @@ public class Base : MonoBehaviour
             }
         }
 
-        if (_units.Count > 0 && ResourceManager.CountResource > 0)
+        if (_units.Count > 0 && ResourceProvider.CountResource > 0)
         {
             unit = _units.Last();
-            resource = ResourceManager.GetResource();
+            resource = ResourceProvider.GetResource();
             _units.Remove(unit);
 
             unit.TransferResource(resource);
@@ -87,7 +87,7 @@ public class Base : MonoBehaviour
 
     private void AddResourse(Resource resource)
     {
-        ResourceManager.AddResource(resource);
+        ResourceProvider.AddResource(resource);
 
         Work();
     }
